@@ -22,6 +22,8 @@ export default function Home() {
         <Divider />
         <PageLink href="/toast-stacking">Toast Stacking</PageLink>
         <PageLink href="/simple-transform">Simple Transform</PageLink>
+        <PageLink href="/card-hover">Card Hover</PageLink>
+        <PageLink href="/download-arrow">Download Arrow</PageLink>
       </div>
     </main>
   );
