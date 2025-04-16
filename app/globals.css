@@ -1,26 +1,106 @@
 @import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(97% 0 0);
+  --color-base-300: oklch(92% 0 0);
+  --color-base-muted: oklch(50% 0 0);
+  --color-base-content: oklch(0% 0 0);
+
+  --color-base-100-dark: oklch(0.145 0 0);
+  --color-base-200-dark: oklch(0.205 0 0);
+  --color-base-300-dark: oklch(0.269 0 0);
+  --color-base-muted-dark: oklch(70% 0 0);
+  --color-base-content-dark: oklch(100% 0 0);
+
+  --font-sans: var(--font-geist-sans), sans-serif;
+  --font-mono: var(--font-supply-mono), monospace;
+
+  --shadow-primary: 0 10px 15px oklch(60.56% 0.2189 292.72 / 30%);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    --webkit-scrollbar-width: 40px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    scrollbar-gutter: none;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+:root {
+  --background: var(--color-base-100);
+  --foreground: var(--color-base-content);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--color-base-100-dark);
+    --foreground: var(--color-base-content-dark);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility text-shadow-glow {
+  text-shadow: 0 0 15px oklch(84.41% 0.1702 86.05 / 60%);
+}
+
+@utility debug {
+  border: 1px solid red;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@utility fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.toast-stack-card {
+  width: 356px;
+  height: 74px;
+  box-shadow: 0 4px 12px #0000001a;
+  border: 1px solid #eeeeee;
+  background: white;
+  border-radius: 8px;
+  grid-area: 1 / 1;
+  --scale-increment: 0.05;
+  --translate-increment: -13%;
+  transform: scale(calc(1 - var(--index) * var(--scale-increment)))
+    translateY(calc(var(--index) * var(--translate-increment)));
 }
