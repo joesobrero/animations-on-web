@@ -1,0 +1,22 @@
+.page-link {
+  opacity: 1;
+  transition-property: opacity transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transform: translateX(0);
+}
+.page-link-icon {
+  transition-duration: 0.2s;
+  transition-property: transform, opacity;
+  transition-timing-function: ease-in-out;
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.page-link:hover {
+  opacity: 0.6;
+  transform: translateX(1rem);
+  .page-link-icon {
+    transform: translateX(-50%);
+    opacity: 0.6;
+  }
+}

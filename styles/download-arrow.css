@@ -1,0 +1,30 @@
+.download-button {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  overflow: hidden;
+}
+
+.arrow-one,
+.arrow-two {
+  transition: transform 0.2s ease-in-out;
+}
+
+.arrow-one {
+  transform: translateY(0%);
+}
+.arrow-two {
+  transform: translateY(-200%);
+}
+
+.download-button:hover {
+  .arrow-one {
+    transform: translateY(100%);
+  }
+  .arrow-two {
+    transform: translateY(-100%);
+  }
+}

@@ -1,0 +1,13 @@
+.toast-stack-card {
+  width: 356px;
+  height: 74px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-base-200);
+  background: var(--color-base-100);
+  border-radius: 8px;
+  grid-area: 1 / 1;
+  --scale-increment: 0.05;
+  --translate-increment: -13%;
+  transform: scale(calc(1 - var(--index) * var(--scale-increment)))
+    translateY(calc(var(--index) * var(--translate-increment)));
+}
