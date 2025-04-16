@@ -24,6 +24,7 @@ export default function Home() {
         <PageLink href="/simple-transform">Simple Transform</PageLink>
         <PageLink href="/card-hover">Card Hover</PageLink>
         <PageLink href="/download-arrow">Download Arrow</PageLink>
+        <PageLink href="/toast-animation">Toast Animation</PageLink>
       </div>
     </main>
   );
