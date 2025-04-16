@@ -6,31 +6,32 @@
 
 @theme {
   /* Light mode colors */
-  /* --color-base-100: oklch(100% 0 0);
+  --color-base-100: oklch(100% 0 0);
   --color-base-200: oklch(97% 0 0);
   --color-base-300: oklch(92% 0 0);
   --color-base-muted: oklch(50% 0 0);
-  --color-base-content: oklch(0% 0 0); */
+  --color-base-content: oklch(0% 0 0);
 
   /* Dark mode colors */
-  --color-base-100: oklch(0.145 0 0);
-  --color-base-200: oklch(0.205 0 0);
-  --color-base-300: oklch(0.269 0 0);
-  --color-base-muted: oklch(70% 0 0);
-  --color-base-content: oklch(100% 0 0);
+  /* --color-base-100-dark: oklch(0.145 0 0);
+  --color-base-200-dark: oklch(0.205 0 0);
+  --color-base-300-dark: oklch(0.269 0 0);
+  --color-base-muted-dark: oklch(70% 0 0);
+  --color-base-content-dark: oklch(100% 0 0); */
 
   /* Fonts */
   --font-sans: var(--font-geist-sans), sans-serif;
   --font-mono: var(--font-supply-mono), monospace;
-
-  /* Shadows */
-  --shadow-primary: 0 10px 15px oklch(60.56% 0.2189 292.72 / 30%);
 }
 
 /* This ensures Tailwind automatically creates both regular and dark: utilities */
 @media (prefers-color-scheme: dark) {
   :root {
-    color-scheme: dark;
+    --color-base-100: oklch(0.145 0 0);
+    --color-base-200: oklch(0.205 0 0);
+    --color-base-300: oklch(0.269 0 0);
+    --color-base-muted: oklch(70% 0 0);
+    --color-base-content: oklch(100% 0 0);
   }
 }
 
@@ -70,22 +71,6 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-}
-
-:root {
-  --background: var(--color-base-100);
-  --foreground: var(--color-base-content);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--color-base-100-dark);
-    --foreground: var(--color-base-content-dark);
-  }
-}
-
-@utility text-shadow-glow {
-  text-shadow: 0 0 15px oklch(84.41% 0.1702 86.05 / 60%);
 }
 
 @utility debug {

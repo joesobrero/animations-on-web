@@ -1,38 +1,30 @@
-import { cn } from "@/lib/utils";
 import Link from "next/link";
+import PageLink from "./_components/page-link";
 
 export default function Home() {
   return (
-    <div className="w-screen h-screen p-16">
-      <main className="flex flex-col gap-8 items-center">
-        <div className="flex flex-col gap-2 items-start w-full">
-          <h1 className="text-4xl font-bold">Animations on the web</h1>
-          <Link href="https://animations.dev/learn/css-animations/transforms">
-            animations.dev
-          </Link>
-        </div>
-        <div className="flex flex-col gap-2 items-start w-full">
-          <PageLink href="/toast-stacking">Toast Stacking</PageLink>
-        </div>
-      </main>
-    </div>
+    <main className="flex flex-col gap-12 items-center">
+      <div className="flex flex-col gap-2 items-start w-full">
+        <h1 className="text-4xl font-extrabold text-base-muted">
+          Animations on the web
+        </h1>
+        <Link
+          href="https://animations.dev/learn/css-animations/transforms"
+          className="text-yellow-600 underline italic"
+          target="_blank"
+        >
+          animations.dev
+        </Link>
+      </div>
+      <div className="flex flex-col gap-2 items-start w-full">
+        <h2 className="text-lg font-light text-base-muted">CSS Animations</h2>
+        <Divider />
+        <PageLink href="/toast-stacking">Toast Stacking</PageLink>
+      </div>
+    </main>
   );
 }
 
-const PageLink = ({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) => {
-  return (
-    <Link
-      href={href}
-      className={cn("text-lg font-medium", "hover:opacity-60")}
-      style={{ transition: "all 0.3s ease" }}
-    >
-      {children}
-    </Link>
-  );
+const Divider = () => {
+  return <div className="w-full h-px bg-base-200" />;
 };
