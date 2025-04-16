@@ -1,5 +1,6 @@
 import Link from "next/link";
-import PageLink from "./_components/page-link";
+import PageLink from "./_components/interactive/page-link";
+import Divider from "./_components/display/divider";
 
 export default function Home() {
   return (
@@ -20,11 +21,8 @@ export default function Home() {
         <h2 className="text-lg font-light text-base-muted">CSS Animations</h2>
         <Divider />
         <PageLink href="/toast-stacking">Toast Stacking</PageLink>
+        <PageLink href="/simple-transform">Simple Transform</PageLink>
       </div>
     </main>
   );
 }
-
-const Divider = () => {
-  return <div className="w-full h-px bg-base-200" />;
-};

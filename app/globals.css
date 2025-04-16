@@ -12,13 +12,6 @@
   --color-base-muted: oklch(50% 0 0);
   --color-base-content: oklch(0% 0 0);
 
-  /* Dark mode colors */
-  /* --color-base-100-dark: oklch(0.145 0 0);
-  --color-base-200-dark: oklch(0.205 0 0);
-  --color-base-300-dark: oklch(0.269 0 0);
-  --color-base-muted-dark: oklch(70% 0 0);
-  --color-base-content-dark: oklch(100% 0 0); */
-
   /* Fonts */
   --font-sans: var(--font-geist-sans), sans-serif;
   --font-mono: var(--font-supply-mono), monospace;
@@ -102,4 +95,25 @@ html {
   --translate-increment: -13%;
   transform: scale(calc(1 - var(--index) * var(--scale-increment)))
     translateY(calc(var(--index) * var(--translate-increment)));
+}
+
+.box-mine {
+  transition: transform 0.2s ease;
+}
+.box-mine:hover {
+  transform: translate(0, -20%);
+}
+
+.box-solution:hover .box-solution-inner {
+  transform: translateY(-20%);
+}
+.box-solution-inner {
+  height: 56px;
+  width: 56px;
+  background: #fad655;
+  border-radius: 50%;
+  transition: transform 200ms ease;
+}
+.box-solution {
+  width: 56px;
 }
