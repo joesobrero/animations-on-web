@@ -1,23 +1,37 @@
 @import "tailwindcss";
-@variant dark (&:where(.dark, .dark *));
+
+/* For automatic system preference detection, don't need a custom variant */
+/* For manual toggle, uncomment: */
+/* @variant dark (&:where(.dark, .dark *)); */
 
 @theme {
-  --color-base-100: oklch(100% 0 0);
+  /* Light mode colors */
+  /* --color-base-100: oklch(100% 0 0);
   --color-base-200: oklch(97% 0 0);
   --color-base-300: oklch(92% 0 0);
   --color-base-muted: oklch(50% 0 0);
-  --color-base-content: oklch(0% 0 0);
+  --color-base-content: oklch(0% 0 0); */
 
-  --color-base-100-dark: oklch(0.145 0 0);
-  --color-base-200-dark: oklch(0.205 0 0);
-  --color-base-300-dark: oklch(0.269 0 0);
-  --color-base-muted-dark: oklch(70% 0 0);
-  --color-base-content-dark: oklch(100% 0 0);
+  /* Dark mode colors */
+  --color-base-100: oklch(0.145 0 0);
+  --color-base-200: oklch(0.205 0 0);
+  --color-base-300: oklch(0.269 0 0);
+  --color-base-muted: oklch(70% 0 0);
+  --color-base-content: oklch(100% 0 0);
 
+  /* Fonts */
   --font-sans: var(--font-geist-sans), sans-serif;
   --font-mono: var(--font-supply-mono), monospace;
 
+  /* Shadows */
   --shadow-primary: 0 10px 15px oklch(60.56% 0.2189 292.72 / 30%);
+}
+
+/* This ensures Tailwind automatically creates both regular and dark: utilities */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
 }
 
 /*
@@ -34,7 +48,7 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+    border-color: var(--color-base-200, currentColor);
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -94,9 +108,9 @@ html {
 .toast-stack-card {
   width: 356px;
   height: 74px;
-  box-shadow: 0 4px 12px #0000001a;
-  border: 1px solid #eeeeee;
-  background: white;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-base-200);
+  background: var(--color-base-100);
   border-radius: 8px;
   grid-area: 1 / 1;
   --scale-increment: 0.05;
