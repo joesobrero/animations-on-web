@@ -10,7 +10,7 @@ export default function TextReveal() {
 
   return (
     <div className="flex flex-col gap-12">
-      <div>
+      <div className="flex flex-col gap-4">
         <div key={reset}>
           <h1 className="h1">
             {WORD.split("").map((char, index) => (
@@ -24,7 +24,10 @@ export default function TextReveal() {
           </h1>
         </div>
         {/* Use this button to replay your animation */}
-        <button className="button" onClick={() => setReset(reset + 1)}>
+        <button
+          className="button text-base-100 bg-base-content w-fit"
+          onClick={() => setReset(reset + 1)}
+        >
           Replay animation
         </button>
       </div>

@@ -7,14 +7,14 @@ export default function Toaster() {
   const [toasts, setToasts] = useState(0);
 
   return (
-    <div className="wrapper">
+    <div className="toast-wrapper">
       <div className="toaster">
         {Array.from({ length: toasts }).map((_, i) => (
           <Toast key={i} index={toasts - (i + 1)} />
         ))}
       </div>
       <button
-        className="button"
+        className="button text-base-100 bg-base-content"
         onClick={() => {
           setToasts(toasts + 1);
         }}
@@ -34,12 +34,14 @@ function Toast({ index }: { index: number }) {
 
   return (
     <div
-      className="toast"
+      className="toast border-base-200 border"
       style={{ "--index": index } as React.CSSProperties}
       data-mounted={mounted}
     >
-      <span className="title">Event Created </span>
-      <span className="description">Monday, January 3rd at 6:00pm</span>
+      <span className="title text-base-content">Event Created </span>
+      <span className="description text-base-muted">
+        Monday, January 3rd at 6:00pm
+      </span>
     </div>
   );
 }
