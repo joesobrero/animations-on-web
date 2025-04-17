@@ -1,0 +1,39 @@
+.scene {
+  perspective: 400px;
+  transform-style: preserve-3d;
+}
+
+.circle {
+  height: 96px;
+  width: 96px;
+  border-radius: 50%;
+  background: #21201c;
+}
+
+.orbitingCircle {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #fad757;
+  /* animation */
+  animation: orbit 5s linear infinite;
+  transform: translateZ(100px);
+}
+.scene:hover .orbitingCircle {
+  animation-play-state: paused;
+}
+
+@keyframes orbit {
+  from {
+    transform: translate(-50%, -50%) rotateY(0deg) translateZ(72px)
+      rotateY(360deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotateY(360deg) translateZ(72px)
+      rotateY(0deg);
+  }
+}
