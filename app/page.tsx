@@ -28,6 +28,7 @@ export default function Home() {
         <PageLink href="/text-reveal">Text Reveal</PageLink>
         <PageLink href="/orbiting">Orbiting</PageLink>
         <PageLink href="/coin-spin">Coin Spin</PageLink>
+        <PageLink href="/hold-to-delete">Hold to Delete</PageLink>
       </div>
     </main>
   );

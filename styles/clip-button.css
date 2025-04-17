@@ -1,0 +1,23 @@
+.clip-button-container:active {
+  transform: scale(0.97);
+  .clip-button {
+    animation: hold-to-delete 2s linear;
+  }
+  animation-fill-mode: forwards;
+}
+.clip-button {
+  animation-duration: 0.2s;
+  animation-timing-function: ease-out;
+  animation: none;
+  clip-path: inset(0 100% 0 0);
+  animation-fill-mode: forwards;
+}
+
+@keyframes hold-to-delete {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
