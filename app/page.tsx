@@ -25,6 +25,8 @@ export default function Home() {
         <PageLink href="/card-hover">Card Hover</PageLink>
         <PageLink href="/download-arrow">Download Arrow</PageLink>
         <PageLink href="/toast-animation">Toast Animation</PageLink>
+        <PageLink href="/text-reveal">Text Reveal</PageLink>
+        <PageLink href="/orbiting">Orbiting</PageLink>
       </div>
     </main>
   );
