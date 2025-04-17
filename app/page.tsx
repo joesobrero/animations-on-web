@@ -27,6 +27,7 @@ export default function Home() {
         <PageLink href="/toast-animation">Toast Animation</PageLink>
         <PageLink href="/text-reveal">Text Reveal</PageLink>
         <PageLink href="/orbiting">Orbiting</PageLink>
+        <PageLink href="/coin-spin">Coin Spin</PageLink>
       </div>
     </main>
   );
