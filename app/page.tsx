@@ -41,6 +41,7 @@ export default function Home() {
           <PageLink href="/app-preview">App Preview</PageLink>
           <PageLink href="/game-of-the-day">Game of the Day</PageLink>
           <PageLink href="/feedback-form">Feedback Form</PageLink>
+          <PageLink href="/multi-step-flow">Multi Step Flow</PageLink>
         </div>
       </div>
     </main>
