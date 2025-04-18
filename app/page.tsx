@@ -42,6 +42,7 @@ export default function Home() {
           <PageLink href="/game-of-the-day">Game of the Day</PageLink>
           <PageLink href="/feedback-form">Feedback Form</PageLink>
           <PageLink href="/multi-step-flow">Multi Step Flow</PageLink>
+          <PageLink href="/trash-interaction">Trash Interaction</PageLink>
         </div>
       </div>
     </main>
