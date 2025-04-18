@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import "./styles.css";
+import Spinner from "@/app/_components/display/spinner";
 
 const buttonCopy = {
   idle: "Send me a login link",
@@ -43,27 +44,6 @@ export default function SmoothButton() {
           </motion.span>
         </AnimatePresence>
       </button>
-    </div>
-  );
-}
-
-function Spinner({ color, size = 20 }: { color: string; size: number }) {
-  const bars = Array(12).fill(0);
-  return (
-    <div
-      className="wrapper"
-      style={
-        {
-          ["--spinner-size"]: `${size}px`,
-          ["--spinner-color"]: color,
-        } as React.CSSProperties
-      }
-    >
-      <div className="spinner">
-        {bars.map((_, i) => (
-          <div className="bar" key={`spinner-bar-${i}`} />
-        ))}
-      </div>
     </div>
   );
 }

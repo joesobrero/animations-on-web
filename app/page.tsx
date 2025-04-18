@@ -39,6 +39,8 @@ export default function Home() {
           <PageLink href="/layout-animation">Layout Animation</PageLink>
           <PageLink href="/shared-layout">Shared Layout</PageLink>
           <PageLink href="/app-preview">App Preview</PageLink>
+          <PageLink href="/game-of-the-day">Game of the Day</PageLink>
+          <PageLink href="/feedback-form">Feedback Form</PageLink>
         </div>
       </div>
     </main>
