@@ -36,6 +36,7 @@ export default function Home() {
           <Divider />
           <PageLink href="/send-login-button">Send Login Button</PageLink>
           <PageLink href="/animate-height">Animate Height</PageLink>
+          <PageLink href="/layout-animation">Layout Animation</PageLink>
         </div>
       </div>
     </main>
