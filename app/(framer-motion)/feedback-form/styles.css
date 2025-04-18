@@ -44,6 +44,10 @@
   top: 17px;
 }
 
+.placeholder[data-feedback="true"] {
+  opacity: 0 !important;
+}
+
 .success-wrapper {
   display: flex;
   height: 100%;
@@ -83,6 +87,7 @@
   padding: 12px;
   font-size: 14px;
   outline: none;
+  color: black;
 }
 
 .textarea::placeholder {
