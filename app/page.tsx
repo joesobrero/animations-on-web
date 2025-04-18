@@ -37,6 +37,7 @@ export default function Home() {
           <PageLink href="/send-login-button">Send Login Button</PageLink>
           <PageLink href="/animate-height">Animate Height</PageLink>
           <PageLink href="/layout-animation">Layout Animation</PageLink>
+          <PageLink href="/shared-layout">Shared Layout</PageLink>
         </div>
       </div>
     </main>
