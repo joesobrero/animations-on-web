@@ -38,6 +38,7 @@ export default function Home() {
           <PageLink href="/animate-height">Animate Height</PageLink>
           <PageLink href="/layout-animation">Layout Animation</PageLink>
           <PageLink href="/shared-layout">Shared Layout</PageLink>
+          <PageLink href="/app-preview">App Preview</PageLink>
         </div>
       </div>
     </main>
