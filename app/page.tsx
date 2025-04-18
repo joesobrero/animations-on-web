@@ -35,6 +35,7 @@ export default function Home() {
           <h2 className="text-lg font-light text-base-muted">Framer Motion</h2>
           <Divider />
           <PageLink href="/send-login-button">Send Login Button</PageLink>
+          <PageLink href="/animate-height">Animate Height</PageLink>
         </div>
       </div>
     </main>
