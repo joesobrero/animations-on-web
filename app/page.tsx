@@ -43,6 +43,8 @@ export default function Home() {
           <PageLink href="/feedback-form">Feedback Form</PageLink>
           <PageLink href="/multi-step-flow">Multi Step Flow</PageLink>
           <PageLink href="/trash-interaction">Trash Interaction</PageLink>
+          <PageLink href="/use-motion-value">Use Motion Value</PageLink>
+          <PageLink href="/interactive-graph">Interactive Graph</PageLink>
         </div>
       </div>
     </main>
