@@ -1,7 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { AnimatePresence, MotionConfig, motion } from "motion/react";
+import {
+  AnimatePresence,
+  MotionConfig,
+  motion,
+  useReducedMotion,
+} from "motion/react";
 import useMeasure from "react-use-measure";
 import "./styles.css";
 
@@ -15,10 +20,17 @@ const variants = {
   },
 };
 
+const reducedMotionVariants = {
+  initial: { opacity: 0 },
+  active: { opacity: 1 },
+  exit: { opacity: 0 },
+};
+
 export default function MultiStepComponent() {
   const [currentStep, setCurrentStep] = useState(0);
   const [direction, setDirection] = useState<number>(0);
   const [ref, bounds] = useMeasure();
+  const reducedMotion = useReducedMotion();
 
   const content = useMemo(() => {
     switch (currentStep) {
@@ -77,13 +89,13 @@ export default function MultiStepComponent() {
     <MotionConfig transition={{ duration: 0.5, type: "spring", bounce: 0 }}>
       <motion.div
         className="multi-step-wrapper border border-base-200"
-        animate={{ height: bounds.height }}
+        animate={reducedMotion ? {} : { height: bounds.height }}
       >
         <div className="multi-step-inner" ref={ref}>
           <AnimatePresence mode="popLayout" initial={false} custom={direction}>
             <motion.div
               key={currentStep}
-              variants={variants}
+              variants={reducedMotion ? reducedMotionVariants : variants}
               initial="initial"
               animate="active"
               exit="exit"
@@ -92,7 +104,7 @@ export default function MultiStepComponent() {
               {content}
             </motion.div>
           </AnimatePresence>
-          <motion.div className="actions" layout>
+          <motion.div className="actions" layout={!reducedMotion}>
             <button
               className="secondary-button"
               disabled={currentStep === 0}
